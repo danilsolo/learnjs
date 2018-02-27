@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Тег SELECT</title>
+  </head>
+
+  <body>
+    <img id="img" src="" alt="">
+  
+
+    <div>
+      <select id='sel' name="num" form="data">
+        <option value="1">x1</option>
+        <option value="2">x2</option>
+        <option value="3">x3</option>
+        <option value="4">x4</option>
+      </select>
+      <select name="sel2" form="data">
+        <option value="1">uno</option>
+        <option value="2">dos</option>
+        <option value="3">tres</option>
+        <option value="4">cinco</option>
+      </select>
+    </div>
+
+    <input type="text" id="inp">
+    <input type="text" id="inp2">
+    <p id="par"></p>
+
+    <script>
+
+      var multiplier = 1
+      var inpvalue = 0
+      const img = document.getElementById('img');
+      const sel =  document.getElementById('sel')
+      const inp = document.getElementById('inp');
+      const inp2 = document.getElementById('inp2');
+      const par = document.getElementById('par');
+
+      console.log(sel.value)
+
+      sel.addEventListener('change', function(event){
+        multiplier = event.target.value
+        par.innerHTML = inpvalue * multiplier
+      })
+
+      inp.addEventListener('input', function(event){
+        inpvalue = event.target.value
+        par.innerHTML =  inpvalue * multiplier
+        inp2.value = inpvalue * multiplier
+      })
+
+      // inp.addEventListener('input', function(event) {
+      //   img.src = event.target.value;
+      //   img.setAttribute('asdf', 'asdfasdf');
+      //   par2.innerHTML = event.target.value*2;
+      // })
+    </script>
+  </body>
+</html>
+
+
+
